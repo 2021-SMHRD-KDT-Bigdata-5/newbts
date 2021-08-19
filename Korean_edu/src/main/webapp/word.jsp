@@ -1,10 +1,15 @@
+<%@page import="model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<% MemberDTO member = (MemberDTO)session.getAttribute("member"); 
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>찰칵 한글교실</title>
 <!-- Bootstrap CSS -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
@@ -13,91 +18,87 @@
 	crossorigin="anonymous">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 <style>
 body {
-	font-family: 'Hahmlet', serif;
+	font-family: 'Gamja Flower', cursive;
 }
 
-button {
-	background: #ffe780;
-	color: #fff;
-	border: none;
-	position: relative;
-	height: 60px;
-	font-size: 1.6em;
-	padding: 0 2em;
-	cursor: pointer;
-	transition: 800ms ease all;
-	outline: none;
+a:link { color: white; text-decoration: none;}
+ a:visited { color: white; text-decoration: none;}
+ a:hover { color: white; text-decoration: none;}
+ 
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 30px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #ff7f00;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
 }
 
-button:hover {
-	background: #fff;
-	color: #ffb115;
-}
+.button:hover {background-color: #f26600}
 
-button:before, button:after {
-	content: '';
-	position: absolute;
-	top: 0;
-	right: 0;
-	height: 2px;
-	width: 0;
-	background: #ffe780;
-	transition: 400ms ease all;
-}
-
-button:after {
-	right: inherit;
-	top: inherit;
-	left: 0;
-	bottom: 0;
-}
-
-button:hover:before, button:hover:after {
-	width: 100%;
-	transition: 800ms ease all;
+.button:active {
+  background-color: #f26600;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 </style>
 
 </head>
 <body style="background-color: #FFFDE5;">
-
-	<!-- Optional JavaScript; choose one of the two! -->
-
-	<!-- Option 1: Bootstrap Bundle with Popper -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
 		crossorigin="anonymous"></script>
 
 
-	<header>
-		<!-- ���⑤� ���� -->
-		<nav class="navbar navbar-fixed-top" id="nav1"
+		<header>
+		<!-- 占쏙옙占썩�ㅿ옙 占쏙옙占쏙옙 -->
+		<nav class="navbar fixed-top navbar-light"
 			style="background-color: #ffb115;">
 			<div class="container">
-				<hr class="my-5">
-				<a class="navbar-brand" href="#"> <img
-					src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30"
-					height="24" class="d-inline-block align-text-top"
-					style="position: center;"> Bootstrap
+	
+				<a class="navbar-brand" href="main.jsp"> <img
+					src="img/small_logo.png" alt="" class="d-inline-block align-text-top">
 				</a>
+				<%if(member == null){ %>
+				<button class="btn btn-warning" style="color : #fff; font-size : 25px;" ><a href="login.jsp">로그인</a></button>
+				<%} else {%>
+				<span style="font-size : 25px"><%=member.getName() %> 친구, 안녕하세요!</span>
+				<button class="btn btn-warning" style="color : #fff; font-size : 25px;"><a href="logout.jsp">로그아웃</a></button>
+				<% } %>
 			</div>
 		</nav>
 	</header>
 	<!-- 移대��硫��� -->
 	<div class="container">
 		<hr class="my-5">
-		<div class="row row-cols-1 row-cols-md-3 g-4">
-			<button>1단계</button>
-			<button>2단계</button>
-			<button>3단계</button>
-			<button>4단계</button>
-			<button>5단계</button>
+		<hr class="my-5">
+		<hr class="my-5">
+		<div class="row row-cols-1 row-cols-md-5 g-4">
+		<div class="col">
+			<button class="button">1단계</button>
+		</div>
+		<div class="col">
+			<button class="button">2단계</button>
+		</div>
+		<div class="col">
+			<button class="button">3단계</button>
+		</div>
+		<div class="col">
+			<button class="button">4단계</button>
+		</div>
+		<div class="col">
+			<button class="button">5단계</button>
+		</div>
 		</div>
 	</div>
 </body>

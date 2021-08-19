@@ -1,6 +1,5 @@
 package controller_command;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -31,7 +30,7 @@ public class JoinServiceCon implements Command{
 			request.setAttribute("id", id);
 			
 			System.out.println("가입 성공..");
-			moveURL = "main.jsp";
+			moveURL = "login.jsp";
 			// forward 방식
 			//RequestDispatcher dispatcher = request.getRequestDispatcher("join_success.jsp");
 			//dispatcher.forward(request, response);
@@ -39,7 +38,7 @@ public class JoinServiceCon implements Command{
 		} else {
 			//response.sendRedirect("main.jsp");
 			System.out.println("가입 실패..");
-			moveURL = "main.jsp";
+			moveURL = "login.jsp";
 		}
 		return moveURL;
 	}

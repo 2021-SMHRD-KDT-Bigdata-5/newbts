@@ -15,7 +15,7 @@ import model.MemberDTO;
 @WebServlet("/JoinCon")
 public class JoinCon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("euc-kr");
+		request.setCharacterEncoding("utf-8");
 
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
@@ -34,7 +34,7 @@ public class JoinCon extends HttpServlet {
 			request.setAttribute("id", id);
 
 			// forward ¹æ½Ä
-			RequestDispatcher dispatcher = request.getRequestDispatcher("main.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
 			dispatcher.forward(request, response);
 			// response.sendRedirect("join_success.jsp");
 		} else {

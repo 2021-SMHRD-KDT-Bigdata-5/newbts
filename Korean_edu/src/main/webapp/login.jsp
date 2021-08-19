@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>찰칵 한글교실</title>
 
 <!--  부트스트랩 js 사용 -->
 <script
@@ -90,7 +90,7 @@ body {
   margin-bottom: 40px;
   width:80%;
   height:40px;
-  background: linear-gradient(125deg,#d7ffb1,#81ce00,#81ce00);
+  background: linear-gradient(125deg,#ffd216,#ffc02f,#ff7f00);
   background-position: left;
   background-size: 200%;
   color:white;
@@ -113,8 +113,9 @@ body {
 
 </head>
 
-<body width="100%" height="100%" style="background-color: #FFFDE5;">
-    <form action="Login" method="post" class="loginForm">
+<body style="background-color: #FFFDE5;">
+    <form action="LoginCon" method="post" class="loginForm">
+      <img src="img/logo.png">
       <img src="img/login.png">
       <div class="idForm">
         <input type="text" class="id" name="id" id="id" placeholder="아이디">
@@ -127,9 +128,10 @@ body {
       </button>
  
       <div class="bottomText">
-        아이디가 없나요? <a href="#">회원가입하기</a>
+        아이디가 없나요? <a href="join.jsp">회원가입하기</a>
       </div>
     </form>
+ 
   </body>
 </html>
 

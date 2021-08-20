@@ -76,9 +76,10 @@ import java.sql.SQLException;
 	            String  getBirth = rs.getString(4);
 	            int  getTel = rs.getInt(5);
 	            String getAddress = rs.getString(6);
+	            int getPoint = rs.getInt(7);
 	            
 	            member = new MemberDTO(getId, getPassword, getName, 
-	            		 getBirth,getTel, getAddress);
+	            		 getBirth,getTel, getAddress, getPoint);
 			}
 		} catch (SQLException e) {
 			// DB관련 오류 발생시 실행되는 catch문
@@ -97,7 +98,7 @@ import java.sql.SQLException;
 		try {
 			connection();
 
-			String sql = "insert into member values(?,?,?,?,?,?)";
+			String sql = "insert into member values(?,?,?,?,?,?,?)";
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, member.getId());
@@ -106,6 +107,7 @@ import java.sql.SQLException;
 			psmt.setString(4, member.getBirth());
 			psmt.setInt(5, member.getTel());
 			psmt.setString(6, member.getAddress());
+			psmt.setInt(7,  member.getPoint());
 
 			cnt = psmt.executeUpdate();
 

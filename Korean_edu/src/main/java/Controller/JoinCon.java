@@ -23,10 +23,10 @@ public class JoinCon extends HttpServlet {
 		String birth = request.getParameter("birth");
 		int tel = Integer.parseInt(request.getParameter("tel"));
 		String address = request.getParameter("address");
-		
+		int point = Integer.parseInt(request.getParameter("point"));
 
 		MemberDAO dao = new MemberDAO();
-		MemberDTO dto = new MemberDTO(id, password, name, birth, tel, address);
+		MemberDTO dto = new MemberDTO(id, password, name, birth, tel, address, point);
 		int cnt = dao.join(dto);
 
 		if (cnt > 0) { // select한 데이터가 있다면

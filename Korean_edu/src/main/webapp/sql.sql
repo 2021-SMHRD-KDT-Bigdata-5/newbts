@@ -16,5 +16,6 @@ create table score(
 
 drop table member;
 
+alter table member add score number;
 select * from member;
 delete from member where id='eun';

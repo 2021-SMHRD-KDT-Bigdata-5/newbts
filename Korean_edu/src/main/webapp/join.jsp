@@ -120,6 +120,7 @@ span {
 		<div class="addForm">
 			<input type="text" class="add" name="address" id="address" placeholder="주소">
 		</div>
+			<input type="hidden" class = "point" name="point" id="point" value="0">
 		<button type="submit" class="btn">회원가입</button>
 
 	</form>

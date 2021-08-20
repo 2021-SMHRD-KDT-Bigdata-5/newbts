@@ -7,9 +7,9 @@ public class MemberDTO {
 	private String birth;
 	private int tel;
 	private String address;
-
+	private int point;
 	
-	public MemberDTO(String id, String password, String name, String birth, int tel, String address) {
+	public MemberDTO(String id, String password, String name, String birth, int tel, String address, int point) {
 		super();
 		this.id = id;
 		this.password = password;
@@ -17,6 +17,7 @@ public class MemberDTO {
 		this.birth = birth;
 		this.tel = tel;
 		this.address = address;
+		this.point = point;
 	}
 
 	public String getId() {
@@ -66,6 +67,16 @@ public class MemberDTO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
+	public int getPoint() {
+		return point;
+	}
+
+	public void setPoint(int point) {
+		this.point = point;
+	}
+	
+	
 
 	
 	

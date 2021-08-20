@@ -1,9 +1,15 @@
+<%@page import="model.BoardDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.BoardDAO"%>
 <%@page import="model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
 <%
 MemberDTO member = (MemberDTO) session.getAttribute("member");
+BoardDAO dao = new BoardDAO();
+ArrayList<BoardDTO> list = new ArrayList<BoardDTO>();
+list = dao.showBoard();
 %>
 
 <!DOCTYPE html>
@@ -81,80 +87,64 @@ a:hover {
 		<hr class="my-5">
 		<hr class="my-5">
 		<div style="text-align: center;">
-			<img src="img/parents.png" style="position: center;">
+			<img src="img/form.png" style="position: center;">
 		</div>
 
 		<br>
 		<br>
 		<br>
 		<br>
-		<h1>회원정보</h1>
+		<h1>고객센터</h1>
 
 		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th scope="col"></th>
-					<th scope="col">이름</th>
-					<th scope="col">나이</th>
-					<th scope="col">가입일</th>
-					<th scope="col">Score</th>
+					<th scope="col">번호</th>
+					<th scope="col">아이디</th>
+					<th scope="col">내용</th>
+					<th scope="col">날짜</th>
 				</tr>
 			</thead>
 			<tbody>
+			<% for(int i = 0; i < list.size(); i++){ %>
 				<tr>
-					<th scope="row">1</th>
-					<td>이찬</td>
-					<td>11세</td>
-					<td>2021-08-01</td>
-					<td>64</td>
+					<td><%=i+1 %></td>
+					<td><%=list.get(i).getWriter() %></td>
+					<td><%=list.get(i).getContent() %></td>
+					<td><%=list.get(i).getWritedate() %></td>
 				</tr>
-				<tr>
-					<th scope="row">2</th>
-					<td>이호준</td>
-					<td>12세</td>
-					<td>2021-05-31</td>
-					<td>202</td>
-				</tr>
+			<%} %>
 			</tbody>
 		</table>
+		
+		<br>
+		<br>
+		<br>
+		<br>
+		<hr class="my-5">
+		<h1>문의사항을 남겨주세요 !</h1>
+		<h5>찰칵한글교실에서 빠른 답변을 제공합니다</h5>
+		<br>
+		<br>
+		<form class="row g-3" action="BoardCon">
+			<div class="col-md-6">
+				<label for="inputEmail4" class="form-label">답변 받을 메일</label> <input
+					type="email" class="form-control" id="inputEmail4">
 
-		<br>
-		<br>
-		<br>
-		<br>
-		<h1>우리 아이 진도</h1>
+			</div>
 
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th scope="col"></th>
-					<th scope="col">이름</th>
-					<th scope="col">낱말퀴즈</th>
-					<th scope="col">문장퀴즈</th>
-					<th scope="col">사진 업로드 수</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th scope="row">1</th>
-					<td>이찬</td>
-					<td>2단계 - 문제 5</td>
-					<td>1단계 - 문제 3</td>
-					<td>8회</td>
-				</tr>
-				<tr>
-					<th scope="row">2</th>
-					<td>이호준</td>
-					<td>4단계 - 문제 1</td>
-					<td>1단계 - 문제 5</td>
-					<td>7회</td>
-				</tr>
-			</tbody>
-		</table>
+			<div class="mb-3">
+				<label for="exampleFormControlTextarea1" class="form-label">내용</label>
+				<textarea class="form-control" id="exampleFormControlTextarea1"
+					rows="3"></textarea>
+			</div>
+		</form>
+		<div style="text-align: right;">
+			<button type="button" class="btn btn-secondary btn-lg">문의하기</button>
+		</div>
 	</div>
-		<br><br><br><br>
-
-	<!-- footer -->
+<!-- footer -->
 	<footer style="text-align: center; background-color: #e7ffd1;">
 		<hr class="my-5">
 		<p class="about" style="font-size: 25px">

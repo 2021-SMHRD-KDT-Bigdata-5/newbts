@@ -19,3 +19,18 @@ drop table member;
 alter table member add score number;
 select * from member;
 delete from member where id='eun';
+
+
+create table board(
+	num number(10),
+	writer varchar2(50),
+	content varchar2(500),
+	writedate date
+)
+
+create sequence num_board
+increment by 1 
+start with 1 
+minvalue 1 
+maxvalue 100
+nocycle; 

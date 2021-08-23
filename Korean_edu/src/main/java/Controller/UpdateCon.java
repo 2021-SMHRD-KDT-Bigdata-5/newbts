@@ -8,38 +8,38 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.MemberDAO;
 import model.MemberDTO;
 
-@WebServlet("/JoinCon")
-public class JoinCon extends HttpServlet {
+@WebServlet("/UpdateCon")
+public class UpdateCon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-
-		String id = request.getParameter("id");
-		String password = request.getParameter("password");
+		request.setCharacterEncoding("euc-kr");
+		
+		HttpSession session = request.getSession();
+		MemberDTO member = (MemberDTO)session.getAttribute("member");
+		
 		String name = request.getParameter("name");
+		String password = request.getParameter("password");
 		String birth = request.getParameter("birth");
 		String tel = request.getParameter("tel");
 		String address = request.getParameter("address");
 		int point = Integer.parseInt(request.getParameter("point"));
 
 		MemberDAO dao = new MemberDAO();
-		MemberDTO dto = new MemberDTO(id, password, name, birth, birth, address, point);
-		int cnt = dao.join(dto);
+		MemberDTO member2 = new MemberDTO(member.getId(), password, name, birth, tel, address, point);
+		int cnt = dao.Update(member2);
 
-		if (cnt > 0) { // select한 데이터가 있다면
-			// request 영역에 email 정보를 저장
-			request.setAttribute("id", id);
-
-			// forward 방식
-			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
-			dispatcher.forward(request, response);
-			// response.sendRedirect("join_success.jsp");
+		if (cnt > 0) { 
+			// 세션에도 수정된 정보를 저장
+			session.setAttribute("member", member2);
+			response.sendRedirect("main.jsp");
 		} else {
-			response.sendRedirect("login.jsp");
+			response.sendRedirect("Update.jsp");
 		}
+
 	}
 
 }

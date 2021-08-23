@@ -111,7 +111,7 @@ span {
 				placeholder="이름">
 		</div>
 		<div class="birthForm">
-			<input type="text" class="birth" name="birth" id="birth"
+			<input type="date" class="birth" name="birth" id="birth"
 				placeholder="생년월일">
 		</div>
 		<div class="telForm">

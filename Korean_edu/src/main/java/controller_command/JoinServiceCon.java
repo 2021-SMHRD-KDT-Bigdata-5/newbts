@@ -18,7 +18,7 @@ public class JoinServiceCon implements Command{
 		String password = request.getParameter("password");
 		String name = request.getParameter("name");
 		String birth = request.getParameter("birth");
-		int tel = Integer.parseInt(request.getParameter("tel"));
+		String tel = request.getParameter("tel");
 		String address = request.getParameter("address");
 		int point = Integer.parseInt(request.getParameter("point"));
 		

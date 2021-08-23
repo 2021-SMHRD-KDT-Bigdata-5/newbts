@@ -5,11 +5,11 @@ public class MemberDTO {
 	private String password;
 	private String name;
 	private String birth;
-	private int tel;
+	private String tel;
 	private String address;
 	private int point;
 	
-	public MemberDTO(String id, String password, String name, String birth, int tel, String address, int point) {
+	public MemberDTO(String id, String password, String name, String birth, String tel, String address, int point) {
 		super();
 		this.id = id;
 		this.password = password;
@@ -52,11 +52,11 @@ public class MemberDTO {
 		this.birth = birth;
 	}
 
-	public int getTel() {
+	public String getTel() {
 		return tel;
 	}
 
-	public void setTel(int tel) {
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 

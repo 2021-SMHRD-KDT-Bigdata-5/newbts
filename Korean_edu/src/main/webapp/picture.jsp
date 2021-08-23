@@ -73,28 +73,13 @@ a:link { color: white; text-decoration: none;}
 			</div>
 		</nav>
 	</header>
-	<!-- 移대��硫��� -->
-
-		<div class="form_section">
-			<div class="form_section_title">
-				<label>상품 이미지</label>
-			</div>
-			<div class="form_section_content">
-				<input type="file" id="fileItem" name='uploadFile'
-					style="height: 30px;">
-			</div>
-		</div>
-
-	<script>
-		/* 이미지 업로드 */
-		$("input[type='file']").on("change", function(e) {
-			let fileInput = $('input[name="uploadFile"]');
-			let fileList = fileInput[0].files;
-			let fileObj = fileList[0];
-			
-			console.log("fileList : " + fileList);
-			console.log("fileObj : " + fileObj);
-		});
-	</script>
+	<div class="container">
+	<hr class="my-5">
+		<hr class="my-5">
+<form method="post" enctype="multipart/form-data" action="imgup.jsp">
+<input type="file" name="filename1" size=40>
+<input type="submit" value="업로드"><br><br>
+</form>
+</div>
 </body>
 </html>

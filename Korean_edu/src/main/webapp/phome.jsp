@@ -59,13 +59,14 @@ a:hover {
 						aria-current="page" href="phome.jsp">홈</a></li>
 					<li class="nav-item"><a class="nav-link" href="learn.jsp">학습현황</a></li>
 					<li class="nav-item"><a class="nav-link" href="form.jsp">고객센터</a></li>
+					<li class="nav-item"><a class="nav-link" href="form.jsp">마이페이지</a></li>
 					<li class="nav-item">
 						<%
 						if (member == null) {
-						%> <a class="nav-link" href="#"
+						%> <a class="nav-link" href="login.jsp"
 						class="nav-link">로그인</a> <%
  } else {
- %> <a class="nav-link" href="#"
+ %> <a class="nav-link" href="logout.jsp"
 						class="nav-link">로그아웃</a> <%
  }
  %>
@@ -81,10 +82,10 @@ a:hover {
 		<hr class="my-5">
 		<hr class="my-5">
 		<div style="text-align: center;">
-			<img src="img/banner1.png" style="position: center;"> <br>
-			<br> <img src="img/banner2.png" style="position: center;">
+			<img src="img/banner1.png" style="max-width : 100%; height : auto;"> <br>
+			<br> <img src="img/banner2.png" style="max-width : 100%; height : auto;">
 			<br>
-			<br> <img src="img/about.png" style="position: center;">
+			<br> <img src="img/about.png" style="max-width : 100%; height : auto;">
 		</div>
 	</div>
 

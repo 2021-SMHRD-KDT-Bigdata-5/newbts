@@ -7,7 +7,8 @@ tel number not null,
 address varchar2(50) not null
 );
 
-alter table member drop column score;
+alter table member modify tel varchar2(50);
+
 
 create table score(
 	id varchar2(12) primary key not null,
@@ -27,6 +28,8 @@ create table board(
 	content varchar2(500),
 	writedate date
 )
+
+select * from member;
 
 create sequence num_board
 increment by 1 

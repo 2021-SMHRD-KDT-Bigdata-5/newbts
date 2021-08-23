@@ -17,9 +17,9 @@ import java.sql.SQLException;
 				Class.forName("oracle.jdbc.driver.OracleDriver");
 
 				// 로컬호스트 : oracle DB가 설치된 PC의 IP주소 설정
-				String url = "jdbc:oracle:thin:@localhost:1521:xe";
-				String user = "bts";
-				String pass = "123";
+				String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
+				String user = "cgi_8_3";
+				String pass = "smhrd3";
 
 				// 데이터베이스 연결
 				conn = DriverManager.getConnection(url, user, pass);
@@ -74,7 +74,7 @@ import java.sql.SQLException;
 	            String getPassword = rs.getString(2);
 	            String getName = rs.getString(3);
 	            String  getBirth = rs.getString(4);
-	            int  getTel = rs.getInt(5);
+	            String  getTel = rs.getString(5);
 	            String getAddress = rs.getString(6);
 	            int getPoint = rs.getInt(7);
 	            
@@ -105,7 +105,7 @@ import java.sql.SQLException;
 			psmt.setString(2, member.getPassword());
 			psmt.setString(3, member.getName());
 			psmt.setString(4, member.getBirth());
-			psmt.setInt(5, member.getTel());
+			psmt.setString(5, member.getTel());
 			psmt.setString(6, member.getAddress());
 			psmt.setInt(7,  member.getPoint());
 
@@ -119,6 +119,43 @@ import java.sql.SQLException;
 
 		return cnt;
 	}
+	
+	public int Update(MemberDTO member) {
+
+		int cnt = 0;
+		String pw = null;
+		String tel = null;
+		String address = null;
+
+		try {
+			connection();
+
+			// 쿼리 실행
+			String sql = "update web_member set name=?, birth=?, tel=?, address=? where id = ?";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, member.getName());
+			psmt.setString(2, member.getBirth());
+			psmt.setString(3, member.getTel());
+			psmt.setString(4, member.getAddress());
+			psmt.setString(5, member.getId());
+
+			// ☆☆☆☆☆
+			// insert, update, delete : executeUpdate() --> DB에 내용을 변경할 때
+			// select : executeQuery() --> DB에 내용을 검색할 때
+			// cnt : 0 이면 실패 0 이상이면 성공
+			cnt = psmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		} // end
+
+		return cnt;
+	}
+
+	
 	public boolean idCheck(String id) {
 
 	      boolean check = false;

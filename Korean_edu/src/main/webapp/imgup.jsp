@@ -33,6 +33,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<img src="<%=fullpath%>" style="max-width : 100%; height : auto;"></img>
+<img src="../Korean_edu/uploadedFiles/123.png" width="40%" height="300px">
 </body>
 </html>

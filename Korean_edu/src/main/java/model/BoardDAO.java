@@ -18,9 +18,9 @@ public class BoardDAO {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
 			// 로컬호스트 : oracle DB가 설치된 PC의 IP주소 설정
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-			String user = "bts";
-			String pass = "123";
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
+			String user = "cgi_8_3";
+			String pass = "smhrd3";
 
 			// 데이터베이스 연결
 			conn = DriverManager.getConnection(url, user, pass);
@@ -60,11 +60,12 @@ public class BoardDAO {
 			connection();
 
 			// 쿼리 실행
-			String sql = "insert into board values(num_message.nextval,?,?,sysdate)";
+			String sql = "insert into board values(num_message.nextval,?,?,?,sysdate)";
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, board.getWriter());
-			psmt.setString(2, board.getContent());
+			psmt.setString(2, board.getTitle());
+			psmt.setString(3, board.getContent());
 
 			cnt = psmt.executeUpdate();
 
@@ -100,10 +101,11 @@ public class BoardDAO {
 			while (rs.next()) {
 				int getNum = rs.getInt(1);
 				String getWriter = rs.getString(2);
-				String getMessage = rs.getString(3);
-				String date = rs.getString(4);
+				String getTitle = rs.getString(3);
+				String getMessage = rs.getString(4);
+				String date = rs.getString(5);
 				
-				message = new BoardDTO(getNum, getWriter, getMessage, date);
+				message = new BoardDTO(getNum, getWriter, getTitle, getMessage, date);
 				list.add(message);
 				
 			}

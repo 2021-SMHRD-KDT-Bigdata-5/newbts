@@ -8,18 +8,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.catalina.Session;
+
 import model.BoardDAO;
 import model.BoardDTO;
+import model.MemberDTO;
 
 @WebServlet("/BoardCon")
 public class BoardCon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 request.setCharacterEncoding("euc-kr");
 		
+		String title = request.getParameter("title");
 		String writer = request.getParameter("writer");
 		String content = request.getParameter("content");
 		
-		BoardDTO dto = new BoardDTO(writer, content);
+		BoardDTO dto = new BoardDTO(title, writer, content);
 		
 		BoardDAO dao = new BoardDAO();
 		

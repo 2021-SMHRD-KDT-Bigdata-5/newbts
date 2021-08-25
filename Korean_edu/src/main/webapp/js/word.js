@@ -86,7 +86,7 @@
                url: 'point',
                data: {"point" : point},
                    success: function(data) {
-                    if(data == "point") {
+                    if(data >= 0) {
                          console.log("성공");
                     }
                     else{

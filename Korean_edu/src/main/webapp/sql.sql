@@ -8,17 +8,17 @@ address varchar2(50) not null,
 point number 
 );
 
-select * from member;
+select * from board;
 
 drop table member;
 
 create table board(
 	num number(10),
 	writer varchar2(50),
+	title varchar2(50),
 	content varchar2(500),
 	writedate date
 )
-
 
 create sequence num_board
 increment by 1 

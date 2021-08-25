@@ -85,10 +85,16 @@ a:hover {
 			<img src="img/banner1.png" style="max-width : 100%; height : auto;"> <br>
 			<br> <img src="img/banner2.png" style="max-width : 100%; height : auto;">
 			<br>
-			<br> <img src="img/about.png" style="max-width : 100%; height : auto;">
-		</div>
+			</div>
 	</div>
-
+			<br><img src="img/about2.png" style="max-width : 100%; height : auto;">
+			<br>
+			<br>
+		<div class="container" style="text-align: center;">
+			<br><img src="img/about.png" style="max-width : 100%; height : auto;">
+			<br>
+			<br>
+		</div>
 	<!-- footer -->
 	<footer style="text-align: center; background-color: #e7ffd1;">
 		<hr class="my-5">

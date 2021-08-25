@@ -3,23 +3,26 @@ package model;
 public class BoardDTO {
 	private int num;
 	private String writer;
+	private String title;
 	private String content;
 	private String writedate;
 	
-	public BoardDTO(int num, String writer, String content, String writedate) {
+	public BoardDTO(int num, String writer, String title, String content, String writedate) {
 		super();
 		this.num = num;
 		this.writer = writer;
+		this.title = title;
 		this.content = content;
 		this.writedate = writedate;
 	}
 
-	public BoardDTO(String writer, String content) {
+	public BoardDTO(String writer, String title, String content) {
 		super();
 		this.writer = writer;
+		this.title = title;
 		this.content = content;
 	}
-	
+
 	public int getNum() {
 		return num;
 	}
@@ -34,6 +37,14 @@ public class BoardDTO {
 
 	public void setWriter(String writer) {
 		this.writer = writer;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getContent() {
@@ -51,6 +62,5 @@ public class BoardDTO {
 	public void setWritedate(String writedate) {
 		this.writedate = writedate;
 	}
-	
 	
 }

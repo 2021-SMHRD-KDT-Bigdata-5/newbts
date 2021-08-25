@@ -103,7 +103,7 @@ a:hover {
 					<th scope="col"></th>
 					<th scope="col">번호</th>
 					<th scope="col">아이디</th>
-					<th scope="col">내용</th>
+					<th scope="col">제목</th>
 					<th scope="col">날짜</th>
 				</tr>
 			</thead>
@@ -112,7 +112,7 @@ a:hover {
 				<tr>
 					<td><%=i+1 %></td>
 					<td><%=list.get(i).getWriter() %></td>
-					<td><%=list.get(i).getContent() %></td>
+					<td><%=list.get(i).getTitle() %></td>
 					<td><%=list.get(i).getWritedate() %></td>
 				</tr>
 			<%} %>
@@ -128,22 +128,26 @@ a:hover {
 		<h5>찰칵한글교실에서 빠른 답변을 제공합니다</h5>
 		<br>
 		<br>
-		<form class="row g-3" action="BoardCon">
-			<div class="col-md-6">
-				<label for="inputEmail4" class="form-label">답변 받을 메일</label> <input
-					type="email" class="form-control" id="inputEmail4">
-
+		<form class="row g-3" action="BoardCon" method="post">
+		
+				<div class="col-md-6">
+				<label for="inputEmail4" class="form-label">제목</label> <input
+					class="form-control" id="inputEmail4" name="title">
 			</div>
-
+			<div class="col-md-6">
+				<label for="inputEmail4" class="form-label">작성자</label> <input
+					class="form-control" id="inputEmail4" name= "writer" value="<%=member.getId()%>">
+			</div>
 			<div class="mb-3">
 				<label for="exampleFormControlTextarea1" class="form-label">내용</label>
-				<textarea class="form-control" id="exampleFormControlTextarea1"
+				<textarea class="form-control" id="exampleFormControlTextarea1" name="content"
 					rows="3"></textarea>
 			</div>
-		</form>
-		<div style="text-align: right;">
-			<button type="button" class="btn btn-secondary btn-lg">문의하기</button>
+			<div style="text-align: right;">
+			<button type="submit" class="btn btn-secondary btn-lg">문의하기</button>
 		</div>
+		</form>
+		
 	</div>
 <!-- footer -->
 	<footer style="text-align: center; background-color: #e7ffd1;">

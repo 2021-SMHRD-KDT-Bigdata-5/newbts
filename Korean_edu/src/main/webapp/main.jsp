@@ -54,9 +54,12 @@ a:link { color: white; text-decoration: none;}
 				<%if(member == null){ %>
 				<button class="btn btn-warning" style="color : #fff; font-size : 25px;" ><a href="login.jsp">로그인</a></button>
 				<%} else {%>
-				<span style="font-size : 25px"><%=member.getName() %> 친구, 안녕하세요!</span>
+				<div>
+				<img src="img/kid.png" style="width : 40px;">
+				<span style="font-size : 25px"><%=member.getName() %> (<%=member.getPoint() %>포인트)</span>
 				<button class="btn btn-warning" style="color : #fff; font-size : 25px;"><a href="logout.jsp">로그아웃</a></button>
 				<% } %>
+				</div>
 			</div>
 		</nav>
 	</header>

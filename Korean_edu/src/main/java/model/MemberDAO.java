@@ -71,14 +71,13 @@ import java.sql.SQLException;
 			// next() : 다음 행으로 넘어가서 데이터 존재 여부 판단(true/false)
 			if (rs.next()) { // select한 데이터가 있다면
 				String getId = rs.getString(1);
-	            String getPassword = rs.getString(2);
 	            String getName = rs.getString(3);
 	            String  getBirth = rs.getString(4);
 	            String  getTel = rs.getString(5);
 	            String getAddress = rs.getString(6);
 	            int getPoint = rs.getInt(7);
 	            
-	            member = new MemberDTO(getId, getPassword, getName, 
+	            member = new MemberDTO(getId, null, getName, 
 	            		 getBirth,getTel, getAddress, getPoint);
 			}
 		} catch (SQLException e) {
@@ -89,6 +88,32 @@ import java.sql.SQLException;
 		} // end
 
 		return member;
+	}
+	
+	public int pointUpdate(MemberDTO member, int point) {
+		int cnt = 0;
+		
+		try {
+			connection();
+			
+			String sql = "update member set point = ? where id = ?";
+			
+			psmt = conn.prepareStatement(sql);
+			
+			psmt.setInt(1, point);
+			psmt.setString(2, member.getId());
+		}
+		catch(
+
+				SQLException e)
+		{
+		e.printStackTrace();
+		}finally
+		{
+		close();
+		}
+		
+	return cnt;
 	}
 	
 	public int join(MemberDTO member) {

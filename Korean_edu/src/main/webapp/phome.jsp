@@ -59,7 +59,7 @@ a:hover {
 						aria-current="page" href="phome.jsp">홈</a></li>
 					<li class="nav-item"><a class="nav-link" href="learn.jsp">학습현황</a></li>
 					<li class="nav-item"><a class="nav-link" href="form.jsp">고객센터</a></li>
-					<li class="nav-item"><a class="nav-link" href="form.jsp">마이페이지</a></li>
+					<li class="nav-item"><a class="nav-link" href="mypage.jsp">마이페이지</a></li>
 					<li class="nav-item">
 						<%
 						if (member == null) {
@@ -92,7 +92,7 @@ a:hover {
 	<!-- footer -->
 	<footer style="text-align: center; background-color: #e7ffd1;">
 		<hr class="my-5">
-		<p class="about" style="font-size: 25px">
+		<p class="about" style="font-size: 15px">
 			<a href="."><i class="fa fa-home"></i> (주) Best Team of SMHRD </a> |
 			<a href="." rel="nofollow">광주광역시 남구 송하동</a> | <a href="."
 				rel="nofollow">(062) 452-2736</a> | <a href="." rel="nofollow">Terms

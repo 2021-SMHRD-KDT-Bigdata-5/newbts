@@ -3,11 +3,14 @@ id varchar2(50) primary key not null,
 password varchar2(50) not null,
 name varchar2(50) not null,
 birth date,
-tel tel varchar2(50) not null,
-address varchar2(50) not null
+tel varchar2(50) not null,
+address varchar2(50) not null,
+point number 
 );
 
+select * from member;
 
+drop table member;
 
 create table board(
 	num number(10),
@@ -23,3 +26,5 @@ start with 1
 minvalue 1 
 maxvalue 100
 nocycle; 
+
+select * from member;

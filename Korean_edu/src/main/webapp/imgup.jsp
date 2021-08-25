@@ -14,7 +14,7 @@
  String savefile = "imgup";
  ServletContext scontext = getServletContext();
  realFolder = scontext.getRealPath(savefile);
-
+ System.out.print(realFolder);
  
  try{
   MultipartRequest multi=new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());

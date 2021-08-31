@@ -6,13 +6,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Insert title here</title>
 
 <!-- 폰트 -->
-
-<link rel="stylesheet" href="css/word.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/word.css" />
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
    <link
@@ -20,9 +19,6 @@
 	rel="stylesheet"
 	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
 	crossorigin="anonymous">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 <style>
 body {
 	font-family: 'Gamja Flower', cursive;
@@ -33,9 +29,12 @@ a:link { color: white; text-decoration: none;}
  a:visited { color: white; text-decoration: none;}
  a:hover { color: white; text-decoration: none;}
 </style>
-
 </head>
 <body>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+		crossorigin="anonymous"></script>
 	
 
 	<header>
@@ -60,7 +59,7 @@ a:link { color: white; text-decoration: none;}
 		</nav>
 	</header>
 
-		<div class="number" id="number_id">	
+		<div class="number" id="number_id">		
 		</div>
 		
 		
@@ -71,13 +70,9 @@ a:link { color: white; text-decoration: none;}
 		<div class="answer" id="answer_id">			
 		</div>
 		
-		<script src="js/word.js"></script>
-	
-		
+		<script src="js/word4.js"></script>
 		<script>
-		
 		</script>
-	
 	
 	                                       
 </body>

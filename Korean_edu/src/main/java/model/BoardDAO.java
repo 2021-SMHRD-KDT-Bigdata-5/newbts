@@ -60,7 +60,7 @@ public class BoardDAO {
 			connection();
 
 			// Äõ¸® ½ÇÇà
-			String sql = "insert into board values(num_message.nextval,?,?,?,sysdate)";
+			String sql = "insert into board values(num_board.nextval,?,?,?,sysdate)";
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, board.getWriter());

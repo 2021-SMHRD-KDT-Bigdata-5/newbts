@@ -102,6 +102,8 @@ import java.sql.SQLException;
 			
 			psmt.setInt(1, point);
 			psmt.setString(2, member.getId());
+			
+			cnt = psmt.executeUpdate();
 		}
 		catch(
 

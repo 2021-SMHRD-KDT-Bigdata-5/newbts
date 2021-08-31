@@ -100,11 +100,10 @@ a:hover {
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th scope="col"></th>
 					<th scope="col">번호</th>
 					<th scope="col">아이디</th>
 					<th scope="col">제목</th>
-					<th scope="col">날짜</th>
+					<th scope="col">작성시간</th>
 				</tr>
 			</thead>
 			<tbody>

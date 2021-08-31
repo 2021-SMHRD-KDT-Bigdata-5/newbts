@@ -1,20 +1,15 @@
 <%@page import="model.MemberDTO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-	
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <% MemberDTO member = (MemberDTO)session.getAttribute("member"); %>
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>찰칵 한글교실</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/sentence.css" />
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-   <script src="//code.jquery.com/jquery-3.3.1.js"></script>
-   <link
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
@@ -22,49 +17,55 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+<title>찰칵 한글교실</title>
+
 <style>
 body {
 	font-family: 'Gamja Flower', cursive;
-	background-color: #FFFDE5;
 }
 
 a:link { color: white; text-decoration: none;}
  a:visited { color: white; text-decoration: none;}
  a:hover { color: white; text-decoration: none;}
- 
-.button {
-  display: inline-block;
-  padding: 15px 25px;
-  font-size: 30px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #ff7f00;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
+
+
+
+
+#btn_cate1{
+width : 250px;
+height : 150px;
+border-radius : 25%;
+font-size : 80px;
+color : white;
+margin-left : 40%;
+margin-top : 3%;
 }
 
-.button:hover {background-color: #f26600}
-
-.button:active {
-  background-color: #f26600;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+#btn_cate2,#btn_cate3,#btn_cate4{
+width : 250px;
+height : 150px;
+border-radius : 25%;
+font-size : 80px;
+color : white;
+margin-left : 40%;
+margin-top : 3%;
 }
+
 </style>
 
 </head>
-<body>
+<body style="background-color: #FFFDE5;">
+
+	<!-- Optional JavaScript; choose one of the two! -->
+
+	<!-- Option 1: Bootstrap Bundle with Popper -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
 		crossorigin="anonymous"></script>
 
 
-		<header>
+	<header>
 		<!-- 占쏙옙占썩�ㅿ옙 占쏙옙占쏙옙 -->
 		<nav class="navbar fixed-top navbar-light"
 			style="background-color: #ffb115;">
@@ -85,25 +86,22 @@ a:link { color: white; text-decoration: none;}
 			</div>
 		</nav>
 	</header>
-	<!-- 移대��硫��� -->
 	<div class="container">
-				<hr class="my-5">
-		<div class="number" id="number_id">	
+	<hr class="my-5">
+		
+		<div class = "cate1">
+			<button id="btn_cate1" type="button"  class="btn btn-primary" onclick="location.href='word.jsp'">과일</button>
 		</div>
-		
-		
-		<div class="problem" id="problem_id">			
+		<div class = "cate2">
+			<button id="btn_cate2" type="button"  class="btn btn-success" onclick="location.href='word3.jsp'"><span>공룡</span></button>
 		</div>
-		
-	
-		<div class="answer" id="answer_id">			
+		<div class = "cate3">
+			<button id="btn_cate3" type="button"  class="btn btn-danger" onclick="location.href='word4.jsp'">자동차</button>
 		</div>
-		
-		<script src="js/sentence.js"></script>
-		
-	
-
+		<div class = "cate4">
+			<button id="btn_cate4" type="button"  class="btn btn-warning" onclick="location.href='word2.jsp'">동물</button>
 		</div>
-
+	</div>
+				                         
 </body>
 </html>

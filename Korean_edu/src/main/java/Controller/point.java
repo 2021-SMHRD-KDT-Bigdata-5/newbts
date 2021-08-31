@@ -26,8 +26,12 @@ public class point extends HttpServlet {
 		MemberDTO member = (MemberDTO) session.getAttribute("member");
 		int point = Integer.parseInt(request.getParameter("point"));
 		
+		System.out.println(member.getId());
+		System.out.println(point);
 		int cnt = dao.pointUpdate(member, point);
 		
+		
+		response.setContentType("text/plain; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		
 		if(cnt == 1) {

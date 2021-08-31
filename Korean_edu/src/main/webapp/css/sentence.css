@@ -3,16 +3,7 @@
 body {
 	background-color: #fce3c2;
 
-  
-	font-family: 'Gamja Flower', cursive;
-
-}
-
-button, input, optgroup, select, textarea {
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
+    font-family: 'Hahmlet', serif;
 }
 .number {
 	margin-top: 20px;
@@ -27,17 +18,17 @@ button, input, optgroup, select, textarea {
 }
 
 .answer {
-	margin-left : 39.5%;
-	width : 400px;
+	margin-left : 27.5%;
+	width : 600px;
 	text-align: center;	
 }
 
 #btn1,#btn2,#btn3,#btn4{
 	border-radius : 25%;
-	width : 20%;
-	height : 125px;
+	width : 25%;
+	height : 150px;
 	color: white;
-    font-size: 150%;
+    font-size: 250%;
 }
 #btnRs,#btnR{
 	border-radius : 20%;

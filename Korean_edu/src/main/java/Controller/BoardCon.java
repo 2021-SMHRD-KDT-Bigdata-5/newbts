@@ -17,13 +17,13 @@ import model.MemberDTO;
 @WebServlet("/BoardCon")
 public class BoardCon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-request.setCharacterEncoding("euc-kr");
+request.setCharacterEncoding("utf-8");
 		
 		String title = request.getParameter("title");
 		String writer = request.getParameter("writer");
 		String content = request.getParameter("content");
 		
-		BoardDTO dto = new BoardDTO(title, writer, content);
+		BoardDTO dto = new BoardDTO(writer, title, content);
 		
 		BoardDAO dao = new BoardDAO();
 		

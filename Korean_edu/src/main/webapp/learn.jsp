@@ -89,7 +89,7 @@ a:hover {
 		<br>
 		<br>
 		<br>
-		<h1>회원정보</h1>
+		<h1>자녀 정보</h1>
 
 		<table class="table table-striped">
 			<thead>
@@ -140,15 +140,15 @@ a:hover {
 				<tr>
 					<th scope="row">1</th>
 					<td>이찬</td>
-					<td>2단계 - 문제 5</td>
-					<td>1단계 - 문제 3</td>
+					<td>12문제</td>
+					<td>8문제</td>
 					<td>8회</td>
 				</tr>
 				<tr>
 					<th scope="row">2</th>
 					<td>이호준</td>
-					<td>4단계 - 문제 1</td>
-					<td>1단계 - 문제 5</td>
+					<td>10문제</td>
+					<td>14문제</td>
 					<td>7회</td>
 				</tr>
 			</tbody>

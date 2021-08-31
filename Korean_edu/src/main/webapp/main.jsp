@@ -71,7 +71,7 @@ a:link { color: white; text-decoration: none;}
 		<div class="row row-cols-1 row-cols-md-2 g-4">
 			<div class="col">
 				<div class="card">
-					<a href="word.jsp"><img src="img/word.png" class="card-img-top" alt="..."></a>
+					<a href="cate_select.jsp"><img src="img/word.png" class="card-img-top" alt="..."></a>
 
 				</div>
 			</div>
@@ -89,7 +89,7 @@ a:link { color: white; text-decoration: none;}
 			</div>
 			<div class="col">
 				<div class="card">
-					<img src="img/game.png" class="card-img-top" alt="...">
+					<a href = "parlogout.jsp"><img src="img/parent.png" class="card-img-top" alt="..."></a>
 
 				</div>
 			</div>

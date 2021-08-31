@@ -8,17 +8,16 @@ address varchar2(50) not null,
 point number 
 );
 
-select * from board;
-
-drop table member;
 
 create table board(
-	num number(10),
+	num number,
 	writer varchar2(50),
-	title varchar2(50),
+	title varchar2(100),
 	content varchar2(500),
 	writedate date
 )
+
+insert into board values(num_board, "chan", "초등학생 한글 문의", "ㅇㅇㅇㅇ", sysdate);
 
 create sequence num_board
 increment by 1 
@@ -27,4 +26,5 @@ minvalue 1
 maxvalue 100
 nocycle; 
 
-select * from member;
+
+
